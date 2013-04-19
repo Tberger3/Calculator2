@@ -6,7 +6,7 @@ public enum RocketPadsDirection
 	SOUTH,	//2
 	EAST,	//3
 	WEST,	//4
-	WALK_DO_NOT_USE_THIS,	//5
+	WALK,	//5
 	STOP,	//6
 	
 	WIN_DO_NOT_USE_THIS, // 7
@@ -16,10 +16,10 @@ public enum RocketPadsDirection
 	START_GREEN,   // 10
 	START_YELLOW,  // 11
 	
-	WIN,     // 12
-	//WIN_BLUE,    // 13
-	//WIN_GREEN,   // 14
-	//WIN_YELLOW,  // 15
+	WIN_RED,     // 12
+	WIN_BLUE,    // 13
+	WIN_GREEN,   // 14
+	WIN_YELLOW,  // 15
 	;
 	
 	public String toString() {
@@ -31,6 +31,8 @@ public enum RocketPadsDirection
 			return "east";
 		else if(this == WEST)
 			return "west";
+		else if(this == WALK)
+			return "walk";
 		else if(this == STOP)
 			return "stop";
 		return null;

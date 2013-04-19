@@ -31,21 +31,43 @@ public class RocketPadsPlayerTest extends TestCase
 		assertEquals(0, testPlayer.getLocation().getY());
 	}
 
-	public void testSetDirection() throws Exception		
+	public void testGetSlide() throws Exception
 	{
-		testPlayer.setDirection(RocketPadsDirection.NORTH);
+		assertFalse(testPlayer.getSlide());
+	}
+
+	public void testSetSlide() throws Exception
+	{
+		testPlayer.setSlide(true);
+		assertTrue(testPlayer.getSlide());
+	}
+
+	public void testSetDirection() throws Exception		
+	/*
+	NORTH,	1
+	SOUTH,	2
+	EAST,	3
+	WEST,	4
+	WALK,	5
+	STOP,	6
+	*/
+	{
+		testPlayer.setDirection(1);
 		assertEquals(RocketPadsDirection.NORTH, testPlayer.getDirection());
 		
-		testPlayer.setDirection(RocketPadsDirection.SOUTH);
+		testPlayer.setDirection(2);
 		assertEquals(RocketPadsDirection.SOUTH, testPlayer.getDirection());
 		
-		testPlayer.setDirection(RocketPadsDirection.EAST);
+		testPlayer.setDirection(3);
 		assertEquals(RocketPadsDirection.EAST, testPlayer.getDirection());
 		
-		testPlayer.setDirection(RocketPadsDirection.WEST);
+		testPlayer.setDirection(4);
 		assertEquals(RocketPadsDirection.WEST, testPlayer.getDirection());
 		
-		testPlayer.setDirection(RocketPadsDirection.STOP);
+		testPlayer.setDirection(5);
+		assertEquals(RocketPadsDirection.WALK, testPlayer.getDirection());
+		
+		testPlayer.setDirection(6);
 		assertEquals(RocketPadsDirection.STOP, testPlayer.getDirection());
 	}
 }

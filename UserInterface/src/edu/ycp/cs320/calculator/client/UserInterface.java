@@ -33,6 +33,19 @@ public class UserInterface implements EntryPoint {
 	
 	// Entry point method.
 	public void onModuleLoad() {
+<<<<<<< HEAD
+		LayoutPanel panel = new LayoutPanel();
+		
+		Game_Selection gameSelection = new Game_Selection();
+		panel.add(gameSelection);
+		gameSelection.update();
+		
+		RootLayoutPanel.get().add(panel);
+		RootLayoutPanel.get().setWidgetLeftRight(panel, 0.0, Unit.PX, 0.0, Unit.PX);
+		RootLayoutPanel.get().setWidgetTopBottom(panel, 0.0, Unit.PX, 0.0, Unit.PX);
+	}
+=======
+>>>>>>> refs/remotes/cmbennett/master
 
 		GameLobby lobby = new GameLobby();
 		GWT.log("Lobby created.");
